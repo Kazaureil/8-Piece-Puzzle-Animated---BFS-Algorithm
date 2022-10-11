@@ -1,0 +1,95 @@
+html, body {
+  padding: 0;
+  margin: 40px;
+  background: #736B22;
+}
+canvas {
+  padding: 0;
+  margin: auto;
+  display: flex;
+}
+
+#canvas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  width: 700px;
+  display: flex;
+  justify-content: left;
+}
+
+#solve-button {
+  position: relative;
+  background: #7fa650;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Montserrat";
+  height: 50px;
+  border: 0;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#solve-button::after {
+  content: '';
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  position: absolute;
+  left: calc(50% - 0.75em);
+  top: calc(50% - 0.75em);
+  border: 0.15em solid transparent;
+  border-right-color: white;
+  border-radius: 50%;
+  animation: button-anim 0.7s linear infinite;
+  opacity: 0;
+}
+
+
+#solve-button.loading {
+  color: transparent;
+}
+
+#solve-button.loading::after {
+  opacity: 1;
+}
+
+@keyframes button-anim {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.button:hover {
+  background: #FF5733;
+}
+
+.stats-text-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+.stats-text {
+  position: relative;
+  height: 10px;
+  margin: 5px;
+  color: white;
+  margin-left: 50px;
+  user-select: none;
+}
